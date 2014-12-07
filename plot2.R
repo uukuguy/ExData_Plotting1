@@ -1,4 +1,4 @@
-plot1 <- function(datafile, pngfile) {
+plot2 <- function(datafile, pngfile) {
     hh <- read.csv(datafile, sep=";", na.strings="?", stringsAsFactors=FALSE)
     tbl_hh <- tbl_df(hh)
     rm(hh)
@@ -6,7 +6,7 @@ plot1 <- function(datafile, pngfile) {
 
     png(file=pngfile, bg="white", width=1024, height=1024)
 
-    hist(tbl_hh1$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+    plot(strptime(paste(tbl_hh1$Date, tbl_hh1$Time),"%d/%m/%Y %H:%M:%S"), tbl_hh1$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 
     dev.off()
 }
