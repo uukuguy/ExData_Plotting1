@@ -13,6 +13,9 @@ plot4 <- function(datafile, pngfile) {
     plot(strptime(paste(tbl_hh1$Date, tbl_hh1$Time),"%d/%m/%Y %H:%M:%S"), tbl_hh1$Voltage, type="l", ylab="Voltage", xlab="datetime")
 
     plot(strptime(paste(tbl_hh1$Date, tbl_hh1$Time),"%d/%m/%Y %H:%M:%S"), tbl_hh1$Sub_metering_1, type="l", ylab="Energy sub metering", xlab="")
+    points(strptime(paste(tbl_hh1$Date, tbl_hh1$Time),"%d/%m/%Y %H:%M:%S"), tbl_hh1$Sub_metering_2, type="l", col="red")
+    points(strptime(paste(tbl_hh1$Date, tbl_hh1$Time),"%d/%m/%Y %H:%M:%S"), tbl_hh1$Sub_metering_3, type="l", col="blue")
+    legend("topright", pch = 4, col = c("gray", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
     plot(strptime(paste(tbl_hh1$Date, tbl_hh1$Time),"%d/%m/%Y %H:%M:%S"), tbl_hh1$Global_reactive_power, type="l", ylab="Global Reactive Power (kilowatts)", xlab="datetime")
 
